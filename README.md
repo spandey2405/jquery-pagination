@@ -46,7 +46,7 @@ In the end of your code just before the closing ``</BODY>`` tag add ``jquery-pag
 	}
 </body>
 ```
-For nigivation bar, jus add a ``<UL>`` tag with id as ``pagination-js-navigation`` for the pagination library to access the content. 
+For nigivation bar, just add a ``<UL>`` tag with id as ``pagination-js-navigation`` for the pagination library to access the content. 
 
 ```ruby 
 	...
