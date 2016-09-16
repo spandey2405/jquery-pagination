@@ -2,7 +2,6 @@
 Jquery Pagination
 =================
 
-|build|_ |coverage|_
 
 When we have a large list of items, Displaying all items in one page is not a good option as it might take too long to load the content. In that case we can display them grouped in pages having navigation to move from one page to another. Jquery-Pagination creates these navigational elements easily.
 
