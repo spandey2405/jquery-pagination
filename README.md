@@ -25,7 +25,7 @@ Include jquery.js, underscore.js and angular.js library in ``<HEAD>`` section of
 <head>
 ```
 
-In the end of your code just before the closing ``</BODY>`` tag add pagination.js library and add code to devliver elements to pagination library. Make sure name of function should be get_data
+In the end of your code just before the closing ``</BODY>`` tag add ``jquery-pagination.js`` library and add code to devliver elements to pagination library. Make sure name of function should be get_data
 
 ```ruby
 	....
@@ -50,9 +50,13 @@ In the end of your code just before the closing ``</BODY>`` tag add pagination.j
 Add ng-repeat in the div or table-row ``<TR>`` to show content.
 
 ```ruby
-	<tr ng-repeat="item in vm.items | orderBy:sortType:sortReverse" ng-show="([item] | filter:searchId).length > 0">
-	<td>{{ item.id }}</td> //
+	<tr ng-repeat="item in vm.items | 
+	orderBy:sortType:sortReverse" ng-show="([item] | 
+	filter:searchId).length > 0"> // could be <div> or <span> tag
+	
+	<td>{{ item.id }}</td> 
 	<td>{{ item.data }}</td>
+	
 	</tr>
 ```
 
