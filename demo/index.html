@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>Home - Roder Admin</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="col-md-10" ng-app="app" ng-controller="ExampleController as vm">
+        <div class="text-center">
+            <ul class="pagination" id="pagination-js-navigation"></ul>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody id="edit">
+                    <tr ng-repeat="item in vm.items | orderBy:sortType:sortReverse" ng-show="([item] | filter:searchId).length > 0">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.data }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../src/js/jquery-pagination.js"></script>
+<script>
+    function get_data(page_no) {
+        var payload = [];
+        $.ajax({
+            url: "demoserver.php?page=" + page_no,
+            type: 'GET',
+            success: function(data) {
+                data = JSON.parse(data);
+                totalItems = data['count'];
+                items = data['results'];
+            },
+            async:false
+        });
+        return items;
+    }
+</script>
+</body>
+</html>
