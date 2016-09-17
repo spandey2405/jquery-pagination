@@ -12,24 +12,47 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
 </head>
 
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Online Coder.in - Jquery Pagination</a>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+
 <div class="container">
-    <div class="col-md-10" ng-app="app" ng-controller="ExampleController as vm">
+    <ol class="breadcrumb">
+        <li><a href="http://onlinecoder.in">Home</a></li>
+        <li><a href=".">Jquery-Pagination</a></li>
+
+    </ol>
+    <div class="col-md-12" ng-app="app" ng-controller="ExampleController as vm">
         <div class="text-center">
+
             <ul class="pagination" id="pagination-js-navigation"></ul>
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <tbody id="edit">
-                    <tr ng-repeat="item in vm.items | orderBy:sortType:sortReverse" ng-show="([item] | filter:searchId).length > 0">
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.data }}</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class="col-sm-6 col-md-3" ng-repeat="item in vm.items | orderBy:sortType:sortReverse" ng-show="([item] | filter:searchId).length > 0">
+                    <div class="thumbnail">
+                        <img src="{{ item.image }}" alt="{{ item.name }}" style="height:150px;">
+                        <div class="caption">
+                            <h3>{{ item.name }}</h3>
+                            <p><a href="{{ item.image }}" class="btn btn-primary" role="button">View</a> <a href="{{ item.image }}" class="btn btn-default" role="button">Download</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
