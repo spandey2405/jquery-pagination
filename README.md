@@ -25,7 +25,7 @@ Include jquery.js, underscore.js and angular.js library in ``<HEAD>`` section of
 <head>
 ```
 
-In the end of your code just before the closing ``</BODY>`` tag add ``jquery-pagination.js`` , [link](https://raw.githubusercontent.com/spandey2405/jquery-pagination/master/src/js/jquery-pagination.js)library and add code to devliver elements to pagination library. Make sure name of function should be get_data
+In the end of your code just before the closing ``</BODY>`` tag add [jquery-pagination.js](https://raw.githubusercontent.com/spandey2405/jquery-pagination/master/src/js/jquery-pagination.js) library and add code to devliver elements to pagination library. Make sure name of function should be get_data
 
 ```ruby
 	....
