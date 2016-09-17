@@ -30,20 +30,22 @@ In the end of your code just before the closing ``</BODY>`` tag add [jquery-pagi
 ```ruby
 	....
 	<script src="src/js/pagination-js.js"></script>
-	function get_data(page_no) {
-	var payload = [];
-	$.ajax({
-	    url: "demoserver.php?page=" + page_no,
-	    type: 'GET',
-	    success: function(data) {
-		data = JSON.parse(data);
-		totalItems = data['count'];
-		items = data['results'];
-	    },
-	    async:false
-	});
-	return items;
-	}
+	<script>
+        function get_data(page_no) {
+        var payload = [];
+        $.ajax({
+            url: "demoserver.php?page=" + page_no,
+            type: 'GET',
+            success: function(data) {
+            data = JSON.parse(data);
+            totalItems = data['count'];
+            items = data['results'];
+            },
+            async:false
+        });
+        return items;
+        }
+	</script>
 </body>
 ```
 For nigivation bar, just add a ``<UL>`` tag with id as ``pagination-js-navigation`` for the pagination library to access the content. 
