@@ -66,5 +66,6 @@ Add ng-repeat in the div or table-row ``<TR>`` to show content.
 	</tr>
 ```
 
+See [Demo](http://onlinecoder.in/jquery-pagination/demo/)
 #### Enjoy!.
 
