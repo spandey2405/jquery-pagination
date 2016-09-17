@@ -48,25 +48,26 @@ In the end of your code just before the closing ``</BODY>`` tag add [jquery-pagi
 	</script>
 </body>
 ```
-For nigivation bar, just add a ``<UL>`` tag with id as ``pagination-js-navigation`` for the pagination library to access the content. 
+Declare Controller within the body and inside controller place the navigation tag. 
+To navigation, just add a ``<UL>`` tag with id as ``pagination-js-navigation`` for the pagination library to access the content.
+Add ng-repeat in the div or table-row ``<TR>`` to show content.
 
 ```ruby 
 	...
+	<div ng-app="app" ng-controller="ExampleController as vm">
 	<ul class="pagination" id="pagination-js-navigation"></ul>
+	<table>
+		<tr ng-repeat="item in vm.items | 
+    	orderBy:sortType:sortReverse" ng-show="([item] | 
+    	filter:searchId).length > 0"> // could be <div> or <span> tag
+    	
+    	<td>{{ item.id }}</td> 
+    	<td>{{ item.data }}</td>
+    	
+    	</tr>
+    </table>
 ```
 
-Add ng-repeat in the div or table-row ``<TR>`` to show content.
-
-```ruby
-	<tr ng-repeat="item in vm.items | 
-	orderBy:sortType:sortReverse" ng-show="([item] | 
-	filter:searchId).length > 0"> // could be <div> or <span> tag
-	
-	<td>{{ item.id }}</td> 
-	<td>{{ item.data }}</td>
-	
-	</tr>
-```
 
 See [Demo](http://onlinecoder.in/jquery-pagination/demo/)
 #### Enjoy!.
