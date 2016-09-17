@@ -46,6 +46,12 @@ In the end of your code just before the closing ``</BODY>`` tag add ``jquery-pag
 	}
 </body>
 ```
+For nigivation bar, just add a ``<UL>`` tag with id as ``pagination-js-navigation`` for the pagination library to access the content. 
+
+```ruby 
+	...
+	<ul class="pagination" id="pagination-js-navigation"></ul>
+```
 
 Add ng-repeat in the div or table-row ``<TR>`` to show content.
 
